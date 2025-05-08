@@ -1,0 +1,5 @@
+cloud_id                 = "b1gj0g5eshjal3kikcd0"
+folder_id                = "b1gppsiqi7bjb957dcmt"
+service_account_key_file = "sa-key.json"
+bucket_name              = "my-unique-bucket-name-12345"
+bucket_acl               = "private"

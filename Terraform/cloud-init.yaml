@@ -1,0 +1,15 @@
+#cloud-config
+package_update: true
+packages:
+  - awscli
+
+runcmd:
+  - echo "[default]" > /root/.aws/credentials
+  - echo "aws_access_key_id = YCAJEGA2-71dRNfA1TlOzRnVo" >> /root/.aws/credentials
+  - echo "aws_secret_access_key = YCMs5IjInHF4BaWlAXGPFAyg991X2vNUpEx6J9Mj" >> /root/.aws/credentials
+  - echo "[default]" > /root/.aws/config
+  - echo "region = ru-central1" >> /root/.aws/config
+  - echo "output = json" >> /root/.aws/config
+  - echo "endpoint_url = https://storage.yandexcloud.net" >> /root/.aws/config
+  - echo "Hello from VM!" > /root/hello.txt
+  - aws --endpoint-url=https://storage.yandexcloud.net s3 cp /root/hello.txt s3://my-unique-bucket-name-12345/
